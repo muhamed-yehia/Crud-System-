@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+    <div class="container-fluid overflow-auto p-0">
+        <div class="style w-100 ">
+            <div class="layer w-100 h-100 p-5">
+                <div class="crud-style container text-center px-4 py-3">
+                    <h1 class="text-white my-5">Crud System</h1>
+                    <div class="form-floating mb-5 ">
+                        <input oninput="validatInputs(this)" type="text"
+                            class="form-control border-0 border-bottom border-black rounded-0 bg-white" id="productName"
+                            placeholder="ProductName">
+                        <small class="alert alert-danger py-1 mt-2 d-none"> You must start with [A-Z]caracter and add
+                            from 2 to 8 small caracter </small>
+                        <label for="productName" cla>productName</label>
+                    </div>
+                    <div class="form-floating mb-5 ">
+                        <input oninput="validatInputs(this)" type="text"
+                            class="form-control border-0 border-bottom border-white rounded-0 bg-white"
+                            id="productPrice" placeholder="ProductPrice">
+                        <small class="alert alert-danger py-1 mt-2 d-none"> you must write from 1000 to 39999 </small>
+                        <label for="ProductPrice" cla>ProductPrice</label>
+                    </div>
+                    <div class="form-floating mb-5 ">
+                        <input oninput="validatInputs(this)" list="CategoryList" type="text"
+                            class="form-control border-0 border-bottom border-white rounded-0 bg-white"
+                            id="productCategory" placeholder="ProductCategory">
+                        <small class="alert alert-danger py-1 mt-2 d-none">you must choose one from the list </small>
+                        <label for="ProductCategory" cla>ProductCategory</label>
+                        <datalist id="CategoryList">
+                            <option value="T.V">
+                            <option value="Mobiles">
+                            <option value="Laptops">
+                            <option value="screens">
+                        </datalist>
+                    </div>
+                    <div class="form-floating mb-5 ">
+                        <input accept="image/*" type="file"
+                            class="form-control border-0 border-bottom border-white rounded-0 bg-white" id="productImg"
+                            placeholder="productImg">
+                        <small class="alert alert-danger py-1 mt-2 d-none"> you must add image</small>
+                        <label for="productImg" cla>productImg</label>
+                    </div>
+                    <div class="form-floating mb-5 ">
+                        <textarea oninput="validatInputs(this)" type="text"
+                            class="form-control border-0 border-bottom border-white rounded-0 bg-white" id="productDesc"
+                            placeholder="ProductDesc"></textarea>
+                        <small class="alert alert-danger py-1 mt-2 d-none"> you must write from 4 to 8 charecter
+                        </small>
+                        <label for="ProductDesc" cla>ProductDesc</label>
+                    </div>
+
+                    <button id="addBtn" onclick="addProduct()" class="btn btn-primary d-block ms-auto">Add
+                        Product</button>
+                    <button id="updateBtn" onclick="update ()" class="btn btn-success d-block ms-auto d-none">Update
+                        Product</button>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <input id="searchinput" oninput="searchProducts()" type="text"
+                class="form-control border-white rounded-5 bg-white my-5 py-3" placeholder="Search By Name...">
+
+            <div class="row py-5 row-gap-5 " id="productInput">
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
